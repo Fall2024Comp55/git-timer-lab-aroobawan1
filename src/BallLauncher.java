@@ -19,8 +19,9 @@ public class BallLauncher extends GraphicsProgram{
 	}
 	
 	public void run() {
-		balls = new ArrayList(); 
+		balls = new ArrayList<GOval>(); 
 		addMouseListeners();
+		timer = new Timer(MS,this);
 		timer.start();
 	}
 	public void actionPerformed(ActionEvent e) {
