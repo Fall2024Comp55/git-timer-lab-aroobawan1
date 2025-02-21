@@ -19,7 +19,7 @@ public class DodgeBall extends GraphicsProgram implements ActionListener {
 	private GLabel text;
 	private Timer movement;
 	private RandomGenerator rgen;
-	
+	private int numTimes = -1; 
 	public static final int SIZE = 25;
 	public static final int SPEED = 2;
 	public static final int MS = 50;
@@ -41,6 +41,10 @@ public class DodgeBall extends GraphicsProgram implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		numTimes++; 
+		if(numTimes % 40 == 0) {
+			addAnEnemy(); 
+		}
 		moveAllBallsOnce();
 	}
 	
